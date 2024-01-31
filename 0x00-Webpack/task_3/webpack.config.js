@@ -10,12 +10,12 @@ module.exports = {
     body: './modules/body/body.js',
     footer: './modules/footer/footer.js',
   },
-   performance: {
+  performance: {
     maxAssetSize: 1000000,
     hints: false,
     maxEntrypointSize: 1000000,
   },
-  plugins: [ new CleanWebpackPlugin(), new HtmlWebpackPlugin() ],
+  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin()],
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -30,19 +30,18 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
   },
-};
-module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          "file-loader",
+          'file-loader',
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               bypassOnDebug: true, // webpack@1.x
               disable: true, // webpack@2.x and newer

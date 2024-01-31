@@ -3,15 +3,14 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, './js/dashboard_main.js'),
-   performance: {
+  performance: {
     maxAssetSize: 1000000,
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
   },
-};
-module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
